@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/vertical_margin"
+    android:paddingLeft="0dp"
+    android:paddingRight="@dimen/vertical_margin"
+    android:paddingStart="0dp">
+
+    <TextView
+        android:id="@+id/item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:paddingBottom="@dimen/content_space"
+        android:paddingTop="@dimen/content_space"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        tools:text="Sample item content" />
+
+    <TextView
+        android:id="@+id/item_due_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/item_content"
+        android:paddingBottom="@dimen/content_space"
+        android:paddingTop="@dimen/content_space"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        tools:text="Due date" />
+
+    <View
+        android:id="@+id/item_priority"
+        android:layout_width="@dimen/priority_width"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/item_due_date"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/item_content"
+        tools:background="#F00" />
+</RelativeLayout>

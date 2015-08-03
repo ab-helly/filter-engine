@@ -3,8 +3,18 @@
     <!-- App theme colors -->
     <color name="primary_dark">#C2185B</color>
     <color name="primary">#E91E63</color>
-    <color name="accent">#CDDC39</color>
+    <color name="accent">#03A9F4</color>
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#727272</color>
     <color name="divider">#B6B6B6</color>
+
+    <color name="query_background">#F5F5F5</color>
+    <!-- Priority background colors -->
+    <string-array name="priority_colors">
+        <item>#B0BEC5</item>
+        <item>#FFEB3B</item>
+        <item>#FF5722</item>
+        <item>#880E4F</item>
+    </string-array>
+
 </resources>
