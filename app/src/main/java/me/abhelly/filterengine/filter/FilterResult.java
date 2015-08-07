@@ -1,6 +1,6 @@
 package me.abhelly.filterengine.filter;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import me.abhelly.filterengine.model.Item;
 
@@ -11,11 +11,11 @@ import me.abhelly.filterengine.model.Item;
  */
 public class FilterResult {
 
-    private Section section;
+    private final Section section;
 
-    private List<Item> items;
+    private final ArrayList<Item> items;
 
-    public FilterResult(Section section, List<Item> items) {
+    public FilterResult(Section section, ArrayList<Item> items) {
         this.section = section;
         this.items = items;
     }
@@ -24,7 +24,7 @@ public class FilterResult {
         return section;
     }
 
-    public List<Item> getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 }

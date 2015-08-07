@@ -9,11 +9,11 @@ import java.util.Date;
  */
 public class Section {
 
-    private String title;
+    private final String title;
 
-    private Date dueDate;
+    private final Date dueDate;
 
-    private int priority;
+    private final int priority;
 
     public Section(String title, Date dueDate, int priority) {
         this.title = title;

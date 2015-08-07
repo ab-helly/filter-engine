@@ -12,22 +12,21 @@ import me.abhelly.filterengine.model.Item;
  */
 public class DataGenerator {
 
-    private static final String CONTENT_TEMPLATE = "Content #";
+    private static final String[] CONTENT_VERBS = new String[]{
+            "bring", "send", "buy", "take", "tell", "verify", "check", "get", "annoy", "make"
+    };
 
     // min due date, current is 09/01/2015 (PST)
     private static final long DATE_START_MS = 1441090800000L;
 
-    // max due date, current is 01/01/2016 (PST)
-    private static final long DATE_END_MS = 1451635200000L;
+    // max due date, current is 10/01/2015 (PST)
+    private static final long DATE_END_MS = 1443682800000L;
 
     private static final int PRIORITY_START = 1;
 
     private static final int PRIORITY_END = 4;
 
     private static DataGenerator mInstance;
-
-    private DataGenerator() {
-    }
 
     public static DataGenerator getInstance() {
         if (mInstance == null) {
@@ -39,7 +38,7 @@ public class DataGenerator {
     public ArrayList<Item> generateDataList(final int count) {
         ArrayList<Item> items = new ArrayList<>(count);
         for (int i = 0; i < count; i++) {
-            items.add(new Item(getRandomContent(i), getRandomDate(), getRandomPriority()));
+            items.add(new Item(i, getRandomContent(i), getRandomDate(), getRandomPriority()));
         }
         return items;
     }
@@ -50,7 +49,8 @@ public class DataGenerator {
     }
 
     private String getRandomContent(int index) {
-        return CONTENT_TEMPLATE + index;
+        return String.format("%s #%d",
+                CONTENT_VERBS[(int) randomNumber(0, CONTENT_VERBS.length - 1)], index);
     }
 
     private int getRandomPriority() {

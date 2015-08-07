@@ -1,5 +1,6 @@
 package me.abhelly.filterengine.filter.parser.token;
 
+import android.content.Context;
 import android.support.annotation.IntDef;
 
 import java.lang.annotation.Retention;
@@ -27,11 +28,11 @@ public abstract class Token {
     public static final int TOKEN_VALUE_TEXT = 6;
 
     @TokenType
-    protected final int mType;
+    final int mType;
 
-    protected final String mSequence;
+    final String mSequence;
 
-    public Token(@TokenType int type, String sequence) {
+    Token(@TokenType int type, String sequence) {
         mType = type;
         mSequence = sequence;
     }
@@ -61,6 +62,11 @@ public abstract class Token {
     public String getSequence() {
         return mSequence;
     }
+
+    /**
+     * @return formatted token value
+     */
+    public abstract String getFormattedSequence(Context context);
 
     @IntDef({TOKEN_LEFT_BRACKET, TOKEN_RIGHT_BRACKET, TOKEN_AND, TOKEN_OR, TOKEN_VALUE_DATE,
             TOKEN_VALUE_PRIORITY, TOKEN_VALUE_TEXT})

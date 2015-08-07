@@ -2,5 +2,7 @@
     <string name="app_name">Task Filtering</string>
     <string name="query_hint">Filter query</string>
 
-    <string name="date_format" translatable="false">yyyy-MM-dd</string>
+    <string name="formatted_date" translatable="false">MMM dd</string>
+    <string name="formatted_priority">Priority %d</string>
+    <string name="formatted_text">Search for: ‘%s’</string>
 </resources>

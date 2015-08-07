@@ -1,5 +1,7 @@
 package me.abhelly.filterengine.filter.parser.token;
 
+import android.content.Context;
+
 /**
  * Token represents binary operations and brackets.
  *
@@ -9,6 +11,11 @@ public class OperatorToken extends Token {
 
     public OperatorToken(@TokenType int type, String sequence) {
         super(type, sequence);
+    }
+
+    @Override
+    public String getFormattedSequence(Context context) {
+        return String.format(" %s ", mSequence);
     }
 
     public int precedence() {

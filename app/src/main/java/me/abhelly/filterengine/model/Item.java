@@ -9,16 +9,23 @@ import java.util.Date;
  */
 public class Item {
 
+    private final int id;
+
     private final String content;
 
     private final Date dueDate;
 
     private final int priority;
 
-    public Item(String content, Date dueDate, int priority) {
+    public Item(int id, String content, Date dueDate, int priority) {
+        this.id = id;
         this.content = content;
         this.dueDate = dueDate;
         this.priority = priority;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getContent() {

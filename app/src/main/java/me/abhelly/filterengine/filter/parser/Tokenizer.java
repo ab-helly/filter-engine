@@ -28,14 +28,14 @@ public class Tokenizer {
     private static final String DATE
             = "((19|20)\\d\\d)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])";
 
-    // FIXME: 05.08.15 it doesn't match any [1-4] in text
+    // FIXME: 05.08.15 it doesn't match any "p" or [1-4] in text
     private static final String TEXT = "^[.[^"
             + LEFT_BRACKET + RIGHT_BRACKET + AND + OR + PRIORITY
             + "]]+";
 
-    private String sentence;
+    private final ArrayList<PatternRule> rules;
 
-    private ArrayList<PatternRule> rules;
+    private String sentence;
 
     private Tokenizer(String sentence) {
         this.sentence = sentence;
@@ -54,7 +54,7 @@ public class Tokenizer {
         return new Tokenizer(sentence).tokenize();
     }
 
-    public LinkedList<Token> tokenize() {
+    private LinkedList<Token> tokenize() {
         sentence = sentence.trim();
         LinkedList<Token> tokens = new LinkedList<>();
         int pos = 0;
@@ -82,10 +82,10 @@ public class Tokenizer {
 
     static class PatternRule {
 
-        private Pattern pattern;
+        private final Pattern pattern;
 
         @Token.TokenType
-        private int tokenType;
+        private final int tokenType;
 
         PatternRule(@Token.TokenType int type, String regex) {
             tokenType = type;

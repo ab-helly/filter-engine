@@ -11,10 +11,10 @@
     <color name="query_background">#F5F5F5</color>
     <!-- Priority background colors -->
     <string-array name="priority_colors">
-        <item>#B0BEC5</item>
-        <item>#FFEB3B</item>
-        <item>#FF5722</item>
-        <item>#880E4F</item>
+        <item>#d44729</item>
+        <item>#0063a6</item>
+        <item>#76c6ff</item>
+        <item>#00000000</item>
     </string-array>
 
 </resources>
