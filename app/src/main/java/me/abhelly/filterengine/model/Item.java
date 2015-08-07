@@ -33,4 +33,15 @@ public class Item {
         return priority;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Item) {
+            Item another = ((Item) o);
+            return this.content.equals(another.content)
+                    && this.dueDate.equals(another.dueDate)
+                    && this.priority == another.priority;
+        } else {
+            return false;
+        }
+    }
 }
